@@ -7,5 +7,3 @@ obj/*
 *.sln
 *.suo
 .idea/*
-
-deploy/js
