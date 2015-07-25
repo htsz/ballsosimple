@@ -165,6 +165,7 @@ var Boot = {
     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     this.game.scale.pageAlignHorizontally = true;
     this.game.scale.pageAlignVertically = true;
+    this.game.scale.setScreenSize(true);
     this.game.state.start('preloader');
   }
 
@@ -240,6 +241,14 @@ var Game = {
     var keys = this.input.keyboard.createCursorKeys();
     keys.right.onUp.add(moveBasket.bind(this, 1));
     keys.left.onUp.add(moveBasket.bind(this, -1));
+
+    if (this.input.activePointer.isDown) {
+      if (this.input.activePointer.x < 480 * 0.4) {
+        moveBasket.call(this, -1);
+      } else if (this.input.activePointer.x > 480 * 0.6) {
+        moveBasket.call(this, 1);
+      }
+    }
   },
 
   update: function update() {
