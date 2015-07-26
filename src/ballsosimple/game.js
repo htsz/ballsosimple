@@ -73,13 +73,13 @@ export const Game = {
     keys.right.onUp.add(moveBasket.bind(this, 1));
     keys.left.onUp.add(moveBasket.bind(this, -1));
 
-    if (this.input.activePointer.isDown) {
+    this.input.onUp.add(() => {
       if (this.input.activePointer.x < 480 * 0.4) {
         moveBasket.call(this, -1);
       } else if (this.input.activePointer.x > 480 * 0.6) {
         moveBasket.call(this, 1);
       }
-    }
+    });
   },
 
   update: function() {
