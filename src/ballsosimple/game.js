@@ -1,7 +1,8 @@
 'use strict';
 
+import { HEALTH } from './config';
 import { initPopups } from './popups';
-import { prettyTime } from './util';
+import { prettyTime, drawText } from './util';
 
 const positions = [48, 144, 240, 336, 432];
 
@@ -50,7 +51,7 @@ export const Game = {
 
     this._healthbox = this.add.sprite(3, 3, 'border');
     this._healthbar = this.add.sprite(4, 4, 'healthbar');
-    this._healthbar.width = 160;
+    this._healthbar.width = HEALTH;
 
     this._timeElapsed = 0;
     this._timeElapsedText = this.add.bitmapText(
@@ -67,6 +68,13 @@ export const Game = {
     this._basket.body.allowGravity = false;
     this._basket.body.immovable = true;
     this._basket.body.setSize(72, 13, 0, 0);
+
+
+    const howto = drawText.call(this,
+      'Don\'t let the falling balls\ntouch the spikes below!', 32);
+    this.time.events.add(
+      Phaser.Timer.SECOND * 4,
+      () => howto.destroy());
 
     initPopups.call(this);
 
