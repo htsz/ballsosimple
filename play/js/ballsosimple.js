@@ -6,7 +6,7 @@ Object.defineProperty(exports, '__esModule', {
 });
 var ads = {
   popup0: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [0],
@@ -14,7 +14,7 @@ var ads = {
     text: ['YOU \nDESERVE \nNOTHING!', 'Get the \nsmile habit!']
   },
   popup1: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [1],
@@ -22,7 +22,7 @@ var ads = {
     text: ['Get \nthat body, \nbuddy!', 'ALL \nPRAISE \nPROTEIN!!!']
   },
   popup2: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [2],
@@ -30,7 +30,7 @@ var ads = {
     text: ['BREED \na family!', 'GO CRACK \nA FAMILY!']
   },
   popup3: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [3],
@@ -38,7 +38,7 @@ var ads = {
     text: ['Ball \nis organic.', 'KEEP \nIT WILD!']
   },
   popup4: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [4],
@@ -46,7 +46,7 @@ var ads = {
     text: ['ME LOVE \nYOU \nLONG TIME!', 'Sexy \nzebras \nin your \narea.']
   },
   popup5: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [5],
@@ -54,7 +54,7 @@ var ads = {
     text: ['KUMI KUMI! \nKIDS MAO!', 'The serial \ncereal \nfor kids.']
   },
   popup6: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [6],
@@ -62,7 +62,7 @@ var ads = {
     text: ['Easy as \nAK-47.', 'SMELL \nLIKE \nSANDALWOOD!']
   },
   popup7: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [7],
@@ -70,7 +70,7 @@ var ads = {
     text: ['Happy love \ntogether. \nBuy friends!', 'You wouldnt \nbelieve \nthe smell']
   },
   popup8: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [8],
@@ -78,7 +78,7 @@ var ads = {
     text: ['NEW ALBUM \nIN YOUR MOM!', 'Selena \nsings \nfor slaves.BUY!']
   },
   popup9: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [9],
@@ -86,7 +86,7 @@ var ads = {
     text: ['GET RICH \nOR DIE!', 'I buy it \nfor a dollar']
   },
   popup10: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [10],
