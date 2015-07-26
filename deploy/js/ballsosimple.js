@@ -4,6 +4,9 @@
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+var NUM_ADS = 20;
+
+exports.NUM_ADS = NUM_ADS;
 var ads = {
   popup0: {
     x: 145,
@@ -144,6 +147,13 @@ var ads = {
     frames: [26],
     fps: 1,
     text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+  },
+  popup20: {
+    x: 145,
+    y: 50,
+    frames: [27],
+    fps: 1,
+    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
   }
 };
 exports.ads = ads;
@@ -192,6 +202,8 @@ var Game = {
   },
 
   create: function create() {
+    var _this = this;
+
     this.physics.startSystem(Phaser.Physics.ARCADE);
     this.physics.arcade.gravity.y = 20;
 
@@ -242,20 +254,20 @@ var Game = {
     keys.right.onUp.add(moveBasket.bind(this, 1));
     keys.left.onUp.add(moveBasket.bind(this, -1));
 
-    if (this.input.activePointer.isDown) {
-      if (this.input.activePointer.x < 480 * 0.4) {
-        moveBasket.call(this, -1);
-      } else if (this.input.activePointer.x > 480 * 0.6) {
-        moveBasket.call(this, 1);
+    this.input.onUp.add(function () {
+      if (_this.input.activePointer.x < 480 * 0.4) {
+        moveBasket.call(_this, -1);
+      } else if (_this.input.activePointer.x > 480 * 0.6) {
+        moveBasket.call(_this, 1);
       }
-    }
+    });
   },
 
   update: function update() {
-    var _this = this;
+    var _this2 = this;
 
     this._balls.forEachAlive(function (ball) {
-      return ball.y >= 290 && pop.call(_this, ball);
+      return ball.y >= 290 && pop.call(_this2, ball);
     });
     this.physics.arcade.collide(this._basket, this._balls, save, null, this);
   },
@@ -383,8 +395,6 @@ exports.initPopups = initPopups;
 
 var _ads = require('./ads');
 
-var NUM_ADS = 19;
-
 function initPopups() {
   var _this = this;
 
@@ -392,9 +402,9 @@ function initPopups() {
 
   this._popups.createMultiple(50, 'popups', 0, false);
 
-  var i = this.rnd.between(0, NUM_ADS);
+  var i = this.rnd.between(0, _ads.NUM_ADS);
   this._popups.forEach(function (popup) {
-    return makePopup.call(_this, popup, i++ % NUM_ADS);
+    return makePopup.call(_this, popup, i++ % _ads.NUM_ADS);
   });
 
   this.time.events.add(Phaser.Timer.SECOND * 15, showPopup, this);
