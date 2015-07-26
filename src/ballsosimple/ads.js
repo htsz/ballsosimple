@@ -4,213 +4,213 @@ export const NUM_ADS = 20;
 
 export const ads = { 
   popup0: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [0],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'YOU \nDESERVE \nNOTHING!',
+      'Get the \nsmile habit!',
     ]
   },
   popup1: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [1],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Get \nthat body, \nbuddy!',
+      'ALL \nPRAISE \nPROTEIN!!!',
     ]
   },
   popup2: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [2],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Have a \nbreak \nhave a \nfamily!',
+      'GO CRACK \nA FAMILY!',
     ]
   },
   popup3: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [3],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Ball \nis organic.',
+      'KEEP \nIT WILD, \nCATCH!',
     ]
   },
   popup4: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [4],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'ME LOVE \nYOU \nLONG TIME!',
+      'Sexy \nzebras \nin your \narea.',
     ]
   },
   popup5: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [5],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'KUMI KUMI! \nKIDS MAO!',
+      'The serial \ncereal \nfor kids.',
     ]
   },
   popup6: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [6],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Easy as \nAK-47.',
+      'SMELL \nLIKE \nSANDALWOOD!',
     ]
   },
   popup7: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [7],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Happy love \ntogether. \nBuy friends!',
+      'You wouldnt \nbelieve \nthe smell',
     ]
   },
   popup8: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [8],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'NEW ALBUM \nIN YOUR MOM!',
+      'Selena \nsings \nfor slaves. \nBUY!',
     ]
   },
   popup9: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [9],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'GET RICH \nOR DIE, \nDIE, \nDIE!',
+      'I buy it \nfor a dollar',
     ]
   },
   popup10: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [10],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Stop being \nso fat!',
+      'YOUR FAT \nAND WILL BE!',
     ]
   },
   popup11: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [11],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Scientists \ncouldnt \nbelieve it!',
+      'Donate \nsperm to \nyour local \nvets!',
     ]
   },
   popup12: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [12],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Guardians \nof the \nAttick \nback in town!',
+      'Facepalm \nchampionships \n2015',
     ]
   },
   popup13: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [13, 14, 15, 16, 17],
     fps: 20,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'RELAX.',
+      'Kill! Kill! Kill!',
     ]
   },
   popup14: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [18],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Premium \nfuneral \nservices.',
+      'CONGRATULATIONS !!! \nYou WON NOTHING!',
     ]
   },
   popup15: {
-    x: 145,
-    y: 50,
+    x: 165,
+    y: 100,
     frames: [19, 20],
     fps: 10,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Get out \nof town!',
+      'Run away!',
     ]
   },
   popup16: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [21],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'SEA \nSMELLS.',
+      'Sail like \nKevin C.',
     ]
   },
   popup17: {
     x: 145,
-    y: 50,
+    y: 80,
     frames: [22, 23],
     fps: 10,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      '!!!',
+      '???',
     ]
   },
   popup18: {
-    x: 145,
-    y: 50,
+    x: 60,
+    y: 100,
     frames: [24, 25],
     fps: 10,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'CHILL!',
+      'FREAK \nOUT!',
     ]
   },
   popup19: {
-    x: 145,
-    y: 50,
+    x: 60,
+    y: 100,
     frames: [26],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'Your body has \nbeen infected. \nClick OK \nto deal with it.',
+      'Brain.exe has \nstopped \nworking! \nEat quickly!',
     ]
   },
   popup20: {
-    x: 145,
-    y: 50,
+    x: 60,
+    y: 100,
     frames: [27],
     fps: 1,
     text: [
-      'DESIRE TO CRAVE\nCall us now!',
-      'Lose 20 lbs\nin 2 hours!',
+      'The relocation \nof the walrus \nresulted in \ncritical pelvis \nshutdown',
+      'THIS IS \nA \nMUDHAPHUKKYN \nSTICKUP!',
     ]
   },
 };
