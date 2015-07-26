@@ -26,8 +26,7 @@ export const Preloader = {
       'bmp1', 'assets/fonts/bmp1.png', 'assets/fonts/bmp1.fnt');
 
     this.load.image('menu-cover', 'assets/covers/menu.png');
-    this.load.image('menu-start', 'assets/covers/start.png');
-    this.load.spritesheet('menu-sound', 'assets/covers/sound.png', 86, 37);
+    this.load.spritesheet('menu-buttons', 'assets/covers/buttons.png', 100, 37);
   },
 
   create: function() {
