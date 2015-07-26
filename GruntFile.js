@@ -60,6 +60,6 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default',
-    ['concat', 'browserify', 'connect', 'open', 'watch']);
+    ['jshint', 'concat', 'browserify', 'connect', 'open', 'watch']);
 
 };
