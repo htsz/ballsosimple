@@ -9,151 +9,151 @@ var NUM_ADS = 20;
 exports.NUM_ADS = NUM_ADS;
 var ads = {
   popup0: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [0],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['YOU \nDESERVE \nNOTHING!', 'Get the \nsmile habit!']
   },
   popup1: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [1],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Get \nthat body, \nbuddy!', 'ALL \nPRAISE \nPROTEIN!!!']
   },
   popup2: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [2],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Have a \nbreak \nhave a \nfamily!', 'GO CRACK \nA FAMILY!']
   },
   popup3: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [3],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Ball \nis organic.', 'KEEP \nIT WILD, \nCATCH!']
   },
   popup4: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [4],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['ME LOVE \nYOU \nLONG TIME!', 'Sexy \nzebras \nin your \narea.']
   },
   popup5: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [5],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['KUMI KUMI! \nKIDS MAO!', 'The serial \ncereal \nfor kids.']
   },
   popup6: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [6],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Easy as \nAK-47.', 'SMELL \nLIKE \nSANDALWOOD!']
   },
   popup7: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [7],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Happy love \ntogether. \nBuy friends!', 'You wouldnt \nbelieve \nthe smell']
   },
   popup8: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [8],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['NEW ALBUM \nIN YOUR MOM!', 'Selena \nsings \nfor slaves. \nBUY!']
   },
   popup9: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [9],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['GET RICH \nOR DIE, \nDIE, \nDIE!', 'I buy it \nfor a dollar']
   },
   popup10: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [10],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Stop being \nso fat!', 'YOUR FAT \nAND WILL BE!']
   },
   popup11: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [11],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Scientists \ncouldnt \nbelieve it!', 'Donate \nsperm to \nyour local \nvets!']
   },
   popup12: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [12],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Guardians \nof the \nAttick \nback in town!', 'Facepalm \nchampionships \n2015']
   },
   popup13: {
-    x: 145,
+    x: 165,
     y: 50,
     frames: [13, 14, 15, 16, 17],
     fps: 20,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['RELAX.', 'Kill! Kill! Kill!']
   },
   popup14: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [18],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Premium \nfuneral \nservices.', 'CONGRATULATIONS !!! \nYou WON NOTHING!']
   },
   popup15: {
-    x: 145,
-    y: 50,
+    x: 165,
+    y: 100,
     frames: [19, 20],
     fps: 10,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Get out \nof town!', 'Run away!']
   },
   popup16: {
-    x: 145,
-    y: 50,
+    x: 16,
+    y: 46,
     frames: [21],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['SEA \nSMELLS.', 'Sail like \nKevin C.']
   },
   popup17: {
     x: 145,
-    y: 50,
+    y: 80,
     frames: [22, 23],
     fps: 10,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['!!!', '???']
   },
   popup18: {
-    x: 145,
-    y: 50,
+    x: 60,
+    y: 100,
     frames: [24, 25],
     fps: 10,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['CHILL!', 'FREAK \nOUT!']
   },
   popup19: {
-    x: 145,
-    y: 50,
+    x: 60,
+    y: 100,
     frames: [26],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['Your body has \nbeen infected. \nClick OK \nto deal with it.', 'Brain.exe has \nstopped \nworking! \nEat quickly!']
   },
   popup20: {
-    x: 145,
-    y: 50,
+    x: 60,
+    y: 100,
     frames: [27],
     fps: 1,
-    text: ['DESIRE TO CRAVE\nCall us now!', 'Lose 20 lbs\nin 2 hours!']
+    text: ['The relocation \nof the walrus \nresulted in \ncritical pelvis \nshutdown', 'THIS IS \nA \nMUDHAPHUKKYN \nSTICKUP!']
   }
 };
 exports.ads = ads;
@@ -232,11 +232,12 @@ var Game = {
     spawnBall.call(this, this._balls);
     this.time.events.loop(Phaser.Timer.SECOND * 2, spawnBall.bind(this, this._balls));
 
-    this._healthbar = this.add.sprite(2, 2, 'healthbar');
+    this._healthbox = this.add.sprite(3, 3, 'healthbox');
+    this._healthbar = this.add.sprite(4, 4, 'healthbar');
     this._healthbar.width = 160;
 
     this._timeElapsed = 0;
-    this._timeElapsedText = this.add.bitmapText(this.world.bounds.right - 4, 4, 'bmp1', '0:00', 16);
+    this._timeElapsedText = this.add.bitmapText(this.world.bounds.right - 3, 3, 'bmp1', '0:00', 16);
     this._timeElapsedText.x -= this._timeElapsedText.width;
     this.time.events.loop(Phaser.Timer.SECOND, addTime, this);
 
@@ -335,7 +336,7 @@ var GameOver = {
   },
 
   create: function create() {
-    var text = this.add.bitmapText(this.world.centerX, this.world.centerY, 'bmp1', 'Can it be all so simple?\nYou survived: ' + (0, _util.prettyTime)(this._score), 16);
+    var text = this.add.bitmapText(this.world.centerX, this.world.centerY, 'bmp1', 'Can it be all so simple?\nYou survived ' + (0, _util.prettyTime)(this._score) + ' minutes.', 16);
     text.x -= text.width / 2;
     text.y -= text.height / 2;
   }
@@ -400,20 +401,20 @@ function initPopups() {
 
   this._popups = this.add.group();
 
-  this._popups.createMultiple(50, 'popups', 0, false);
+  this._popups.createMultiple(100, 'popups', 0, false);
 
   var i = this.rnd.between(0, _ads.NUM_ADS);
   this._popups.forEach(function (popup) {
     return makePopup.call(_this, popup, i++ % _ads.NUM_ADS);
   });
 
-  this.time.events.add(Phaser.Timer.SECOND * 15, showPopup, this);
+  this.time.events.add(Phaser.Timer.SECOND * 10, showPopup, this);
 }
 
 function makePopup(popup, i) {
   var ad = _ads.ads['popup' + i];
   var text = this.add.bitmapText(ad.x, ad.y, 'bmp1', ad.text[this.rnd.between(0, ad.text.length - 1)], 32);
-  var button = this.add.button(6, 6, 'close1', function () {
+  var button = this.add.button(2, 2, 'close1', function () {
     return popup.kill();
   });
   popup.addChild(text);
@@ -422,15 +423,22 @@ function makePopup(popup, i) {
 }
 
 function showPopup() {
-  var popup = this._popups.getFirstDead();
-  if (!popup) {
-    return;
-  }
+  var i = 0;
+  var popup = undefined;
+  do {
+    popup = this._popups.getRandom();
+  } while (popup.alive && i++ < 10);
 
-  popup.reset(this.rnd.between(0, 100), this.rnd.between(0, 200));
+  popup.reset(this.rnd.between(0, 100), this.rnd.between(40, 160));
   popup.animations.play('idle');
+  popup.bringToTop();
 
-  this.time.events.add(Phaser.Timer.SECOND * 3, showPopup, this);
+  this.time.events.add(Phaser.Timer.SECOND * delay.call(this), showPopup, this);
+}
+
+function delay() {
+  var elapsed = Math.min(this._timeElapsed, 120);
+  return Phaser.Math.mapLinear(elapsed, 0, 120, 6, 0.1);
 }
 
 },{"./ads":1}],8:[function(require,module,exports){
@@ -443,6 +451,7 @@ var Preloader = {
 
   preload: function preload() {
     this.load.image('basket', 'assets/basket.png');
+    this.load.image('healthbox', 'assets/healthbox.png');
     this.load.image('healthbar', 'assets/healthbar.png');
     this.load.image('close1', 'assets/close1.png');
     this.load.spritesheet('spikes', 'assets/spikes.png', 15, 15);
