@@ -4,12 +4,12 @@ import { prettyTime, drawText } from './util';
 
 export const Score = {
 
+	preload: function() {
+    this.stage.backgroundColor = '#ded7ad';
+	},
+
   init: function(score) {
     this._score = score;
-  },
-
-  preload: function() {
-    this.stage.backgroundColor = '#ded7ad';
   },
 
   create: function() {

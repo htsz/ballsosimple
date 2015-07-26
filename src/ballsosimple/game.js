@@ -68,6 +68,8 @@ export const Game = {
     this._basket.body.allowGravity = false;
     this._basket.body.immovable = true;
     this._basket.body.setSize(72, 13, 0, 0);
+    this._soundGameplay = this.add.audio('audio-gameplay',1,true);
+    this._soundGameplay.play('',0,1,true);
 
 
     const howto = drawText.call(this,
@@ -137,6 +139,10 @@ function pop(ball) {
 
 function end() {
   if (this._healthbar.width <= 0) {
+    if (this._soundGameplay) {
+      this._soundGameplay.destroy();
+    }
+
     this.state.start('gameover', true, false, this._timeElapsed);
   }
 }
