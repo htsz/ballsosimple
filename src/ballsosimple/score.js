@@ -29,5 +29,5 @@ function tweet(score) {
   window.top.open(
     'http://twitter.com/share?url=https://htsz.github.io/ballsosimple/play' +
     '&text=It was supposed to be all so simple and yet I only lasted for ' +
-    prettyTime(score) + ' minutes. #ballsosimple');
+    prettyTime(score) + ' minutes.&hashtags=ballsosimple');
 }
