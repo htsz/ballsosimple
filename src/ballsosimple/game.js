@@ -71,7 +71,7 @@ export const Game = {
 
 
     const howto = drawText.call(this,
-      'Don\'t let the falling balls\ntouch the spikes below!', 32);
+      'Collect balls.  It\'s that simple.', 32);
     this.time.events.add(
       Phaser.Timer.SECOND * 4,
       () => howto.destroy());
