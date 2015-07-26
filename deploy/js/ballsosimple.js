@@ -307,7 +307,7 @@ function addTime() {
   this._timeElapsedText.text = (0, _util.prettyTime)(this._timeElapsed);
 }
 
-},{"./popups":6,"./util":8}],4:[function(require,module,exports){
+},{"./popups":7,"./util":9}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -331,12 +331,14 @@ var GameOver = {
 };
 exports.GameOver = GameOver;
 
-},{"./util":8}],5:[function(require,module,exports){
+},{"./util":9}],5:[function(require,module,exports){
 'use strict';
 
 var _boot = require('./boot');
 
 var _preloader = require('./preloader');
+
+var _menu = require('./menu');
 
 var _game = require('./game');
 
@@ -345,11 +347,33 @@ var _gameover = require('./gameover');
 var game = new Phaser.Game(480, 320, Phaser.AUTO, 'game');
 game.state.add('boot', _boot.Boot);
 game.state.add('preloader', _preloader.Preloader);
+game.state.add('menu', _menu.Menu);
 game.state.add('game', _game.Game);
 game.state.add('gameover', _gameover.GameOver);
 game.state.start('boot');
 
-},{"./boot":2,"./game":3,"./gameover":4,"./preloader":7}],6:[function(require,module,exports){
+},{"./boot":2,"./game":3,"./gameover":4,"./menu":6,"./preloader":8}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var Menu = {
+
+  create: function create() {
+    var _this = this;
+
+    this.add.sprite(0, 0, 'menu-cover');
+    this.add.button(290, 270, 'menu-start', function () {
+      return _this.game.state.start('game');
+    });
+    // this.add.button(370, 270, 'menu-sound', () => undefined);
+  }
+
+};
+exports.Menu = Menu;
+
+},{}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -373,7 +397,7 @@ function initPopups() {
     return makePopup.call(_this, popup, i++ % NUM_ADS);
   });
 
-  this.time.events.add(Phaser.Timer.SECOND * 1, showPopup, this);
+  this.time.events.add(Phaser.Timer.SECOND * 15, showPopup, this);
 }
 
 function makePopup(popup, i) {
@@ -396,10 +420,10 @@ function showPopup() {
   popup.reset(this.rnd.between(0, 100), this.rnd.between(0, 200));
   popup.animations.play('idle');
 
-  this.time.events.add(Phaser.Timer.SECOND * 1, showPopup, this);
+  this.time.events.add(Phaser.Timer.SECOND * 3, showPopup, this);
 }
 
-},{"./ads":1}],7:[function(require,module,exports){
+},{"./ads":1}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -408,24 +432,28 @@ Object.defineProperty(exports, '__esModule', {
 var Preloader = {
 
   preload: function preload() {
-    this.load.image('basket', '../assets/basket.png');
-    this.load.image('healthbar', '../assets/healthbar.png');
-    this.load.image('close1', '../assets/close1.png');
-    this.load.spritesheet('spikes', '../assets/spikes.png', 15, 15);
-    this.load.spritesheet('ball', '../assets/ball.png', 48, 48);
-    this.load.spritesheet('popups', '../assets/popups.png', 360, 180);
+    this.load.image('basket', 'assets/basket.png');
+    this.load.image('healthbar', 'assets/healthbar.png');
+    this.load.image('close1', 'assets/close1.png');
+    this.load.spritesheet('spikes', 'assets/spikes.png', 15, 15);
+    this.load.spritesheet('ball', 'assets/ball.png', 48, 48);
+    this.load.spritesheet('popups', 'assets/popups.png', 360, 180);
 
     this.load.bitmapFont('bmp1', 'assets/fonts/bmp1.png', 'assets/fonts/bmp1.fnt');
+
+    this.load.image('menu-cover', 'assets/covers/menu.png');
+    this.load.image('menu-start', 'assets/covers/start.png');
+    this.load.spritesheet('menu-sound', 'assets/covers/sound.png', 86, 37);
   },
 
   create: function create() {
-    this.game.state.start('game');
+    this.game.state.start('menu');
   }
 
 };
 exports.Preloader = Preloader;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
