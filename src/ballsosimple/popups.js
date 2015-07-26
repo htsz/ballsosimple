@@ -43,6 +43,6 @@ function showPopup() {
 }
 
 function delay() {
-  const elapsed = Math.min(this._timeElapsed, 120);
-  return Phaser.Math.mapLinear(elapsed, 0, 120, 6, 0.1);
+  const elapsed = Math.min(this._timeElapsed, 169);
+  return Phaser.Math.mapLinear(Math.sqrt(elapsed), 0, 13, 6, 0.2);
 }

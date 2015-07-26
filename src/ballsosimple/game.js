@@ -68,10 +68,12 @@ export const Game = {
     this._basket.body.allowGravity = false;
     this._basket.body.immovable = true;
     this._basket.body.setSize(72, 13, 0, 0);
+    this._soundGameplay = this.add.audio('audio-gameplay',1,true);
+    this._soundGameplay.play('',0,1,true);
 
 
     const howto = drawText.call(this,
-      'Don\'t let the falling balls\ntouch the spikes below!', 32);
+      'Collect balls.  It\'s that simple.', 32);
     this.time.events.add(
       Phaser.Timer.SECOND * 4,
       () => howto.destroy());
@@ -83,9 +85,11 @@ export const Game = {
     keys.left.onUp.add(moveBasket.bind(this, -1));
 
     this.input.onUp.add(() => {
-      if (this.input.activePointer.x < 480 * 0.4) {
+      if (this.input.activePointer.x < 480 * 0.4 &&
+          this.input.activePointer.y > 320 * 0.7) {
         moveBasket.call(this, -1);
-      } else if (this.input.activePointer.x > 480 * 0.6) {
+      } else if (this.input.activePointer.x > 480 * 0.6 &&
+                 this.input.activePointer.y > 320 * 0.7) {
         moveBasket.call(this, 1);
       }
     });
@@ -135,7 +139,11 @@ function pop(ball) {
 
 function end() {
   if (this._healthbar.width <= 0) {
-    this.state.start('gameover', true, true, this._timeElapsed);
+    if (this._soundGameplay) {
+      this._soundGameplay.destroy();
+    }
+
+    this.state.start('gameover', true, false, this._timeElapsed);
   }
 }
 
