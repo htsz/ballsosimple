@@ -20,7 +20,7 @@ export const ads = {
     fps: 1,
     text: [
       'Get \nthat body, \nbuddy!',
-      'ALL \nPRAISE \nPROTEIN!!!',
+      'ALL PRAISE \nPROTEIN!!!',
     ]
   },
   popup2: {
@@ -47,13 +47,13 @@ export const ads = {
   },
   popup4: {
     but: { x: 326, y: 2, name: 'close1' },
-    x: 165,
+    x: 155,
     y: 50,
     frames: [4],
     fps: 1,
     text: [
       'ME LOVE \nYOU \nLONG TIME!',
-      'Sexy \nzebras \nin your \narea.',
+      'Sexy \nzebras \nin your area.',
     ]
   },
   popup5: {
@@ -86,7 +86,7 @@ export const ads = {
     fps: 1,
     text: [
       'Happy love \ntogether. \nBuy friends!',
-      'You wouldnt \nbelieve \nthe smell',
+      'You wouldn\'t \nbelieve \nthe smell',
     ]
   },
   popup8: {
@@ -97,7 +97,7 @@ export const ads = {
     fps: 1,
     text: [
       'NEW ALBUM \nIN YOUR MOM!',
-      'Selena \nsings \nfor slaves.BUY!',
+      'Selena sings \nfor slaves.\nBUY!',
     ]
   },
   popup9: {
@@ -119,7 +119,7 @@ export const ads = {
     fps: 1,
     text: [
       'Stop being \nso fat!',
-      'YOUR FAT \nAND WILL BE!',
+      'YOU\'RE FAT \nAND WILL BE!',
     ]
   },
   popup11: {
@@ -129,7 +129,7 @@ export const ads = {
     frames: [11],
     fps: 1,
     text: [
-      'Scientists \ncouldnt \nbelieve it!',
+      'Scientists \ncouldn\'t \nbelieve it!',
       'Donate \nsperm to \nlocal vets!',
     ]
   },
@@ -140,7 +140,7 @@ export const ads = {
     frames: [12],
     fps: 1,
     text: [
-      'Guardians \nof the \nAttick \nback in town!',
+      'Guardians \nof the Attic \nback in town!',
       'Facepalm \nchampionships \n2015',
     ]
   },
@@ -163,13 +163,13 @@ export const ads = {
     fps: 1,
     text: [
       '  Premium \n  funeral \n  services.',
-      '  You WON \nNOTHING!',
+      '  You WON \n  NOTHING!',
     ]
   },
   popup15: {
     but: { x: -2, y: -4, name: 'close2' },
-    x: 165,
-    y: 100,
+    x: 195,
+    y: 90,
     frames: [19, 20],
     fps: 10,
     text: [
@@ -207,7 +207,7 @@ export const ads = {
     fps: 10,
     text: [
       'CHILL!',
-      'FREAK \nOUT!',
+      'FREAK OUT!',
     ]
   },
   popup19: {
@@ -228,8 +228,8 @@ export const ads = {
     frames: [27],
     fps: 1,
     text: [
-      ' The relocation \nof the walrus \nshutdown',
-      ' THIS IS \nA STICKUP!',
+      '  The relocation \n  of the walrus \n  shutdown',
+      '  THIS IS \n  A STICKUP!',
     ]
   },
 };
