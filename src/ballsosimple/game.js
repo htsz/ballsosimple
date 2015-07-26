@@ -83,9 +83,11 @@ export const Game = {
     keys.left.onUp.add(moveBasket.bind(this, -1));
 
     this.input.onUp.add(() => {
-      if (this.input.activePointer.x < 480 * 0.4) {
+      if (this.input.activePointer.x < 480 * 0.4 &&
+          this.input.activePointer.y > 320 * 0.7) {
         moveBasket.call(this, -1);
-      } else if (this.input.activePointer.x > 480 * 0.6) {
+      } else if (this.input.activePointer.x > 480 * 0.6 &&
+                 this.input.activePointer.y > 320 * 0.7) {
         moveBasket.call(this, 1);
       }
     });
