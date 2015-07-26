@@ -282,8 +282,10 @@ var Game = {
     this._basket.body.allowGravity = false;
     this._basket.body.immovable = true;
     this._basket.body.setSize(72, 13, 0, 0);
+    this._soundGameplay = this.add.audio('audio-gameplay', 1, true);
+    this._soundGameplay.play('', 0, 1, true);
 
-    var howto = _util.drawText.call(this, 'Don\'t let the falling balls\ntouch the spikes below!', 32);
+    var howto = _util.drawText.call(this, 'Collect balls.  It\'s that simple.', 32);
     this.time.events.add(Phaser.Timer.SECOND * 4, function () {
       return howto.destroy();
     });
@@ -295,9 +297,9 @@ var Game = {
     keys.left.onUp.add(moveBasket.bind(this, -1));
 
     this.input.onUp.add(function () {
-      if (_this.input.activePointer.x < 480 * 0.4) {
+      if (_this.input.activePointer.x < 480 * 0.4 && _this.input.activePointer.y > 320 * 0.7) {
         moveBasket.call(_this, -1);
-      } else if (_this.input.activePointer.x > 480 * 0.6) {
+      } else if (_this.input.activePointer.x > 480 * 0.6 && _this.input.activePointer.y > 320 * 0.7) {
         moveBasket.call(_this, 1);
       }
     });
@@ -350,7 +352,11 @@ function pop(ball) {
 
 function end() {
   if (this._healthbar.width <= 0) {
-    this.state.start('gameover', true, true, this._timeElapsed);
+    if (this._soundGameplay) {
+      this._soundGameplay.destroy();
+    }
+
+    this.state.start('gameover', true, false, this._timeElapsed);
   }
 }
 
@@ -379,8 +385,12 @@ var GameOver = {
 
     _util.drawText.call(this, 'G A M E\nO V E R', 32);
 
+    if (this._soundGameplay) {
+      this._soundGameplay.destroy();
+    }
+
     var showScore = function showScore() {
-      return _this.game.state.start('score', true, true, _this._score);
+      return _this.game.state.start('score', true, false, _this._score);
     };
     this.input.onUp.add(showScore);
     this.input.keyboard.onUpCallback = showScore;
@@ -421,14 +431,20 @@ Object.defineProperty(exports, '__esModule', {
 });
 var Menu = {
 
-  create: function create() {
-    var _this = this;
+  preload: function preload() {
+    this._soundIntro = this.add.audio('audio-intro', 1, true);
+  },
 
+  create: function create() {
     this.add.sprite(0, 0, 'menu-cover');
-    this.add.button(290, 270, 'menu-start', function () {
-      return _this.game.state.start('game');
-    });
-    // this.add.button(370, 270, 'menu-sound', () => undefined);
+    this._soundIntro.play('', 0, 1, true);
+
+    this.add.button(330, 270, 'menu-buttons', function () {
+      if (this._soundIntro) {
+        this._soundIntro.destroy();
+      }
+      this.game.state.start('game');
+    }, this, 0, 0, 0, 0);
   }
 
 };
@@ -487,8 +503,8 @@ function showPopup() {
 }
 
 function delay() {
-  var elapsed = Math.min(this._timeElapsed, 120);
-  return Phaser.Math.mapLinear(elapsed, 0, 120, 6, 0.1);
+  var elapsed = Math.min(this._timeElapsed, 169);
+  return Phaser.Math.mapLinear(Math.sqrt(elapsed), 0, 13, 6, 0.2);
 }
 
 },{"./ads":1,"./config":3}],9:[function(require,module,exports){
@@ -520,8 +536,10 @@ var Preloader = {
     this.load.bitmapFont('bmp1', 'assets/fonts/bmp1.png', 'assets/fonts/bmp1.fnt');
 
     this.load.image('menu-cover', 'assets/covers/menu.png');
-    this.load.image('menu-start', 'assets/covers/start.png');
+    this.load.spritesheet('menu-buttons', 'assets/covers/buttons.png', 100, 37);
     this.load.spritesheet('menu-sound', 'assets/covers/sound.png', 86, 37);
+    this.load.audio('audio-intro', ['assets/sfx/intro.ogg', 'assets/sfx/intro.mp3', 'assets/sfx/intro.m4a']);
+    this.load.audio('audio-gameplay', ['assets/sfx/gameplay.ogg', 'assets/sfx/gameplay.mp3', 'assets/sfx/gameplay.m4a']);
   },
 
   create: function create() {
@@ -542,16 +560,33 @@ var _util = require('./util');
 
 var Score = {
 
+  preload: function preload() {
+    this.stage.backgroundColor = '#ded7ad';
+  },
+
   init: function init(score) {
     this._score = score;
   },
 
   create: function create() {
+    var _this = this;
+
     _util.drawText.call(this, 'Can it be all so simple?\nYou survived ' + (0, _util.prettyTime)(this._score) + ' minutes.', 32);
+
+    this.add.button(260, 230, 'menu-buttons', function () {
+      return _this.game.state.start('game');
+    }, null, 3, 3, 3, 3);
+    this.add.button(120, 230, 'menu-buttons', function () {
+      return tweet(_this._score);
+    }, null, 4, 4, 4, 4);
   }
 
 };
+
 exports.Score = Score;
+function tweet(score) {
+  window.top.open('http://twitter.com/share?url=https://htsz.github.io/ballsosimple/play' + '&text=It was supposed to be all so simple and yet I only lasted for ' + (0, _util.prettyTime)(score) + ' minutes. And you? #ballsosimple');
+}
 
 },{"./util":11}],11:[function(require,module,exports){
 'use strict';
