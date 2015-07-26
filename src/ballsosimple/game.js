@@ -135,7 +135,7 @@ function pop(ball) {
 
 function end() {
   if (this._healthbar.width <= 0) {
-    this.state.start('gameover', true, true, this._timeElapsed);
+    this.state.start('gameover', true, false, this._timeElapsed);
   }
 }
 
