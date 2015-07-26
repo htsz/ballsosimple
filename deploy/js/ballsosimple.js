@@ -4,11 +4,9 @@
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var NUM_ADS = 20;
-
-exports.NUM_ADS = NUM_ADS;
 var ads = {
   popup0: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [0],
@@ -16,6 +14,7 @@ var ads = {
     text: ['YOU \nDESERVE \nNOTHING!', 'Get the \nsmile habit!']
   },
   popup1: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [1],
@@ -23,6 +22,7 @@ var ads = {
     text: ['Get \nthat body, \nbuddy!', 'ALL \nPRAISE \nPROTEIN!!!']
   },
   popup2: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [2],
@@ -30,6 +30,7 @@ var ads = {
     text: ['BREED \na family!', 'GO CRACK \nA FAMILY!']
   },
   popup3: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [3],
@@ -37,6 +38,7 @@ var ads = {
     text: ['Ball \nis organic.', 'KEEP \nIT WILD!']
   },
   popup4: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [4],
@@ -44,6 +46,7 @@ var ads = {
     text: ['ME LOVE \nYOU \nLONG TIME!', 'Sexy \nzebras \nin your \narea.']
   },
   popup5: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [5],
@@ -51,6 +54,7 @@ var ads = {
     text: ['KUMI KUMI! \nKIDS MAO!', 'The serial \ncereal \nfor kids.']
   },
   popup6: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [6],
@@ -58,6 +62,7 @@ var ads = {
     text: ['Easy as \nAK-47.', 'SMELL \nLIKE \nSANDALWOOD!']
   },
   popup7: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [7],
@@ -65,6 +70,7 @@ var ads = {
     text: ['Happy love \ntogether. \nBuy friends!', 'You wouldnt \nbelieve \nthe smell']
   },
   popup8: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [8],
@@ -72,6 +78,7 @@ var ads = {
     text: ['NEW ALBUM \nIN YOUR MOM!', 'Selena \nsings \nfor slaves.BUY!']
   },
   popup9: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [9],
@@ -79,6 +86,7 @@ var ads = {
     text: ['GET RICH \nOR DIE!', 'I buy it \nfor a dollar']
   },
   popup10: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [10],
@@ -86,6 +94,7 @@ var ads = {
     text: ['Stop being \nso fat!', 'YOUR FAT \nAND WILL BE!']
   },
   popup11: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [11],
@@ -93,6 +102,7 @@ var ads = {
     text: ['Scientists \ncouldnt \nbelieve it!', 'Donate \nsperm to \nlocal vets!']
   },
   popup12: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [12],
@@ -100,6 +110,7 @@ var ads = {
     text: ['Guardians \nof the \nAttick \nback in town!', 'Facepalm \nchampionships \n2015']
   },
   popup13: {
+    but: { x: -2, y: -4, name: 'close2' },
     x: 165,
     y: 50,
     frames: [13, 14, 15, 16, 17],
@@ -107,6 +118,7 @@ var ads = {
     text: ['RELAX.', 'Kill! Kill! Kill!']
   },
   popup14: {
+    but: { x: -2, y: -4, name: 'close2' },
     x: 16,
     y: 46,
     frames: [18],
@@ -114,6 +126,7 @@ var ads = {
     text: ['  Premium \n  funeral \n  services.', '  You WON \nNOTHING!']
   },
   popup15: {
+    but: { x: -2, y: -4, name: 'close2' },
     x: 165,
     y: 100,
     frames: [19, 20],
@@ -121,6 +134,7 @@ var ads = {
     text: [' Get out \n of town!', ' Run away!']
   },
   popup16: {
+    but: { x: -2, y: -4, name: 'close2' },
     x: 16,
     y: 46,
     frames: [21],
@@ -128,13 +142,15 @@ var ads = {
     text: [' SEA \n SMELLS.', ' Sail like \n Kevin C.']
   },
   popup17: {
-    x: 145,
+    but: { x: 2, y: 2, name: 'close1' },
+    x: 175,
     y: 80,
     frames: [22, 23],
     fps: 10,
     text: ['!!!', '???']
   },
   popup18: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 60,
     y: 100,
     frames: [24, 25],
@@ -142,6 +158,7 @@ var ads = {
     text: ['CHILL!', 'FREAK \nOUT!']
   },
   popup19: {
+    but: { x: 317, y: -8, name: 'close3' },
     x: 103,
     y: 50,
     frames: [26],
@@ -149,6 +166,7 @@ var ads = {
     text: [' Your body has \n been infected.', ' Brain.exe has \n stopped working!']
   },
   popup20: {
+    but: { x: 317, y: -8, name: 'close3' },
     x: 103,
     y: 50,
     frames: [27],
@@ -156,7 +174,10 @@ var ads = {
     text: [' The relocation \nof the walrus \nshutdown', ' THIS IS \nA STICKUP!']
   }
 };
+
 exports.ads = ads;
+var NUM_ADS = Object.keys(ads).length;
+exports.NUM_ADS = NUM_ADS;
 
 },{}],2:[function(require,module,exports){
 'use strict';
@@ -188,6 +209,19 @@ exports.Boot = Boot;
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+var HEALTH = 160;
+exports.HEALTH = HEALTH;
+var TIME_TO_FIRST_POPUP = 10;
+exports.TIME_TO_FIRST_POPUP = TIME_TO_FIRST_POPUP;
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _config = require('./config');
 
 var _popups = require('./popups');
 
@@ -234,7 +268,7 @@ var Game = {
 
     this._healthbox = this.add.sprite(3, 3, 'border');
     this._healthbar = this.add.sprite(4, 4, 'healthbar');
-    this._healthbar.width = 160;
+    this._healthbar.width = _config.HEALTH;
 
     this._timeElapsed = 0;
     this._timeElapsedText = this.add.bitmapText(this.world.bounds.right - 3, 3, 'bmp1', '0:00', 16);
@@ -248,6 +282,11 @@ var Game = {
     this._basket.body.allowGravity = false;
     this._basket.body.immovable = true;
     this._basket.body.setSize(72, 13, 0, 0);
+
+    var howto = _util.drawText.call(this, 'Don\'t let the falling balls\ntouch the spikes below!', 32);
+    this.time.events.add(Phaser.Timer.SECOND * 4, function () {
+      return howto.destroy();
+    });
 
     _popups.initPopups.call(this);
 
@@ -320,12 +359,15 @@ function addTime() {
   this._timeElapsedText.text = (0, _util.prettyTime)(this._timeElapsed);
 }
 
-},{"./popups":7,"./util":10}],4:[function(require,module,exports){
+},{"./config":3,"./popups":8,"./util":11}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+
+var _util = require('./util');
+
 var GameOver = {
 
   init: function init(time) {
@@ -335,15 +377,11 @@ var GameOver = {
   create: function create() {
     var _this = this;
 
-    var text = this.add.bitmapText(this.world.centerX, this.world.centerY, 'bmp1', 'G A M E\nO V E R', 32);
-    text.align = 'center';
-    text.x -= text.width / 2;
-    text.y -= text.height / 2;
+    _util.drawText.call(this, 'G A M E\nO V E R', 32);
 
     var showScore = function showScore() {
       return _this.game.state.start('score', true, true, _this._score);
     };
-
     this.input.onUp.add(showScore);
     this.input.keyboard.onUpCallback = showScore;
   }
@@ -351,7 +389,7 @@ var GameOver = {
 };
 exports.GameOver = GameOver;
 
-},{}],5:[function(require,module,exports){
+},{"./util":11}],6:[function(require,module,exports){
 'use strict';
 
 var _boot = require('./boot');
@@ -375,7 +413,7 @@ game.state.add('gameover', _gameover.GameOver);
 game.state.add('score', _score.Score);
 game.state.start('boot');
 
-},{"./boot":2,"./game":3,"./gameover":4,"./menu":6,"./preloader":8,"./score":9}],6:[function(require,module,exports){
+},{"./boot":2,"./game":4,"./gameover":5,"./menu":7,"./preloader":9,"./score":10}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -396,13 +434,15 @@ var Menu = {
 };
 exports.Menu = Menu;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.initPopups = initPopups;
+
+var _config = require('./config');
 
 var _ads = require('./ads');
 
@@ -418,13 +458,13 @@ function initPopups() {
     return makePopup.call(_this, popup, i++ % _ads.NUM_ADS);
   });
 
-  this.time.events.add(Phaser.Timer.SECOND * 10, showPopup, this);
+  this.time.events.add(Phaser.Timer.SECOND * _config.TIME_TO_FIRST_POPUP, showPopup, this);
 }
 
 function makePopup(popup, i) {
   var ad = _ads.ads['popup' + i];
   var text = this.add.bitmapText(ad.x, ad.y, 'bmp1', ad.text[this.rnd.between(0, ad.text.length - 1)], 32);
-  var button = this.add.button(2, 2, 'close1', function () {
+  var button = this.add.button(ad.but.x, ad.but.y, ad.but.name, function () {
     return popup.kill();
   });
   popup.addChild(text);
@@ -451,7 +491,7 @@ function delay() {
   return Phaser.Math.mapLinear(elapsed, 0, 120, 6, 0.1);
 }
 
-},{"./ads":1}],8:[function(require,module,exports){
+},{"./ads":1,"./config":3}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -471,6 +511,8 @@ var Preloader = {
     this.load.image('healthbar', 'assets/healthbar.png');
     this.load.image('basket', 'assets/basket.png');
     this.load.image('close1', 'assets/close1.png');
+    this.load.image('close2', 'assets/close2.png');
+    this.load.image('close3', 'assets/close3.png');
     this.load.spritesheet('spikes', 'assets/spikes.png', 15, 15);
     this.load.spritesheet('ball', 'assets/ball.png', 48, 48);
     this.load.spritesheet('popups', 'assets/popups.png', 360, 180);
@@ -489,7 +531,7 @@ var Preloader = {
 };
 exports.Preloader = Preloader;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -505,22 +547,20 @@ var Score = {
   },
 
   create: function create() {
-    var text = this.add.bitmapText(this.world.centerX, this.world.centerY, 'bmp1', 'Can it be all so simple?\nYou survived ' + (0, _util.prettyTime)(this._score) + ' minutes.', 16);
-    text.align = 'center';
-    text.x -= text.width / 2;
-    text.y -= text.height / 2;
+    _util.drawText.call(this, 'Can it be all so simple?\nYou survived ' + (0, _util.prettyTime)(this._score) + ' minutes.', 32);
   }
 
 };
 exports.Score = Score;
 
-},{"./util":10}],10:[function(require,module,exports){
+},{"./util":11}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.prettyTime = prettyTime;
+exports.drawText = drawText;
 
 function prettyTime(time) {
   var minutes = Math.floor(time / 60);
@@ -528,4 +568,14 @@ function prettyTime(time) {
   return seconds < 10 ? minutes + ':0' + seconds : minutes + ':' + seconds;
 }
 
-},{}]},{},[5]);
+function drawText(text) {
+  var size = arguments.length <= 1 || arguments[1] === undefined ? 32 : arguments[1];
+
+  var bmp = this.add.bitmapText(this.world.centerX, this.world.centerY, 'bmp1', text, size);
+  bmp.align = 'center';
+  bmp.x -= bmp.width / 2;
+  bmp.y -= bmp.height / 2;
+  return bmp;
+}
+
+},{}]},{},[6]);
