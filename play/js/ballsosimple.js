@@ -584,7 +584,7 @@ var Score = {
 
 exports.Score = Score;
 function tweet(score) {
-  window.top.open('http://twitter.com/share?url=https://htsz.github.io/ballsosimple/play' + '&text=It was supposed to be all so simple and yet I only lasted for ' + (0, _util.prettyTime)(score) + ' minutes. #ballsosimple');
+  window.top.open('http://twitter.com/share?url=https://htsz.github.io/ballsosimple/play' + '&text=It was supposed to be all so simple and yet I only lasted for ' + (0, _util.prettyTime)(score) + ' minutes.&hashtags=ballsosimple');
 }
 
 },{"./util":11}],11:[function(require,module,exports){
