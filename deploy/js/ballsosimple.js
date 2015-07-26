@@ -27,14 +27,14 @@ var ads = {
     y: 50,
     frames: [2],
     fps: 1,
-    text: ['Have a \nbreak \nhave a \nfamily!', 'GO CRACK \nA FAMILY!']
+    text: ['BREED \na family!', 'GO CRACK \nA FAMILY!']
   },
   popup3: {
     x: 165,
     y: 50,
     frames: [3],
     fps: 1,
-    text: ['Ball \nis organic.', 'KEEP \nIT WILD, \nCATCH!']
+    text: ['Ball \nis organic.', 'KEEP \nIT WILD!']
   },
   popup4: {
     x: 165,
@@ -69,14 +69,14 @@ var ads = {
     y: 50,
     frames: [8],
     fps: 1,
-    text: ['NEW ALBUM \nIN YOUR MOM!', 'Selena \nsings \nfor slaves. \nBUY!']
+    text: ['NEW ALBUM \nIN YOUR MOM!', 'Selena \nsings \nfor slaves.BUY!']
   },
   popup9: {
     x: 165,
     y: 50,
     frames: [9],
     fps: 1,
-    text: ['GET RICH \nOR DIE, \nDIE, \nDIE!', 'I buy it \nfor a dollar']
+    text: ['GET RICH \nOR DIE!', 'I buy it \nfor a dollar']
   },
   popup10: {
     x: 165,
@@ -90,7 +90,7 @@ var ads = {
     y: 46,
     frames: [11],
     fps: 1,
-    text: ['Scientists \ncouldnt \nbelieve it!', 'Donate \nsperm to \nyour local \nvets!']
+    text: ['Scientists \ncouldnt \nbelieve it!', 'Donate \nsperm to \nlocal vets!']
   },
   popup12: {
     x: 16,
@@ -111,21 +111,21 @@ var ads = {
     y: 46,
     frames: [18],
     fps: 1,
-    text: ['Premium \nfuneral \nservices.', 'CONGRATULATIONS !!! \nYou WON NOTHING!']
+    text: ['  Premium \n  funeral \n  services.', '  You WON \nNOTHING!']
   },
   popup15: {
     x: 165,
     y: 100,
     frames: [19, 20],
     fps: 10,
-    text: ['Get out \nof town!', 'Run away!']
+    text: [' Get out \n of town!', ' Run away!']
   },
   popup16: {
     x: 16,
     y: 46,
     frames: [21],
     fps: 1,
-    text: ['SEA \nSMELLS.', 'Sail like \nKevin C.']
+    text: [' SEA \n SMELLS.', ' Sail like \n Kevin C.']
   },
   popup17: {
     x: 145,
@@ -142,18 +142,18 @@ var ads = {
     text: ['CHILL!', 'FREAK \nOUT!']
   },
   popup19: {
-    x: 60,
-    y: 100,
+    x: 103,
+    y: 50,
     frames: [26],
     fps: 1,
-    text: ['Your body has \nbeen infected. \nClick OK \nto deal with it.', 'Brain.exe has \nstopped \nworking! \nEat quickly!']
+    text: [' Your body has \n been infected.', ' Brain.exe has \n stopped working!']
   },
   popup20: {
-    x: 60,
-    y: 100,
+    x: 103,
+    y: 50,
     frames: [27],
     fps: 1,
-    text: ['The relocation \nof the walrus \nresulted in \ncritical pelvis \nshutdown', 'THIS IS \nA \nMUDHAPHUKKYN \nSTICKUP!']
+    text: [' The relocation \nof the walrus \nshutdown', ' THIS IS \nA STICKUP!']
   }
 };
 exports.ads = ads;
@@ -167,8 +167,8 @@ Object.defineProperty(exports, '__esModule', {
 var Boot = {
 
   preload: function preload() {
-    //this.load.image('preloaderBg', 'img/loading-bg.png');
-    //this.load.image('preloaderBar', 'img/loading-bar.png');
+    this.load.image('border', 'assets/border.png');
+    this.load.image('progressbar', 'assets/progressbar.png');
   },
 
   create: function create() {
@@ -232,7 +232,7 @@ var Game = {
     spawnBall.call(this, this._balls);
     this.time.events.loop(Phaser.Timer.SECOND * 2, spawnBall.bind(this, this._balls));
 
-    this._healthbox = this.add.sprite(3, 3, 'healthbox');
+    this._healthbox = this.add.sprite(3, 3, 'border');
     this._healthbar = this.add.sprite(4, 4, 'healthbar');
     this._healthbar.width = 160;
 
@@ -320,15 +320,12 @@ function addTime() {
   this._timeElapsedText.text = (0, _util.prettyTime)(this._timeElapsed);
 }
 
-},{"./popups":7,"./util":9}],4:[function(require,module,exports){
+},{"./popups":7,"./util":10}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-
-var _util = require('./util');
-
 var GameOver = {
 
   init: function init(time) {
@@ -336,15 +333,25 @@ var GameOver = {
   },
 
   create: function create() {
-    var text = this.add.bitmapText(this.world.centerX, this.world.centerY, 'bmp1', 'Can it be all so simple?\nYou survived ' + (0, _util.prettyTime)(this._score) + ' minutes.', 16);
+    var _this = this;
+
+    var text = this.add.bitmapText(this.world.centerX, this.world.centerY, 'bmp1', 'G A M E\nO V E R', 32);
+    text.align = 'center';
     text.x -= text.width / 2;
     text.y -= text.height / 2;
+
+    var showScore = function showScore() {
+      return _this.game.state.start('score', true, true, _this._score);
+    };
+
+    this.input.onUp.add(showScore);
+    this.input.keyboard.onUpCallback = showScore;
   }
 
 };
 exports.GameOver = GameOver;
 
-},{"./util":9}],5:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 var _boot = require('./boot');
@@ -357,15 +364,18 @@ var _game = require('./game');
 
 var _gameover = require('./gameover');
 
+var _score = require('./score');
+
 var game = new Phaser.Game(480, 320, Phaser.AUTO, 'game');
 game.state.add('boot', _boot.Boot);
 game.state.add('preloader', _preloader.Preloader);
 game.state.add('menu', _menu.Menu);
 game.state.add('game', _game.Game);
 game.state.add('gameover', _gameover.GameOver);
+game.state.add('score', _score.Score);
 game.state.start('boot');
 
-},{"./boot":2,"./game":3,"./gameover":4,"./menu":6,"./preloader":8}],6:[function(require,module,exports){
+},{"./boot":2,"./game":3,"./gameover":4,"./menu":6,"./preloader":8,"./score":9}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -450,9 +460,16 @@ Object.defineProperty(exports, '__esModule', {
 var Preloader = {
 
   preload: function preload() {
-    this.load.image('basket', 'assets/basket.png');
-    this.load.image('healthbox', 'assets/healthbox.png');
+    this.stage.backgroundColor = '#d6cf9d';
+
+    var progressbox = this.add.sprite(this.world.centerX, this.world.centerY, 'border');
+    progressbox.anchor.setTo(0.5);
+    var progressbar = this.add.sprite(this.world.centerX, this.world.centerY, 'progressbar');
+    progressbar.anchor.setTo(0.5);
+    this.load.setPreloadSprite(progressbar);
+
     this.load.image('healthbar', 'assets/healthbar.png');
+    this.load.image('basket', 'assets/basket.png');
     this.load.image('close1', 'assets/close1.png');
     this.load.spritesheet('spikes', 'assets/spikes.png', 15, 15);
     this.load.spritesheet('ball', 'assets/ball.png', 48, 48);
@@ -473,6 +490,31 @@ var Preloader = {
 exports.Preloader = Preloader;
 
 },{}],9:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _util = require('./util');
+
+var Score = {
+
+  init: function init(score) {
+    this._score = score;
+  },
+
+  create: function create() {
+    var text = this.add.bitmapText(this.world.centerX, this.world.centerY, 'bmp1', 'Can it be all so simple?\nYou survived ' + (0, _util.prettyTime)(this._score) + ' minutes.', 16);
+    text.align = 'center';
+    text.x -= text.width / 2;
+    text.y -= text.height / 2;
+  }
+
+};
+exports.Score = Score;
+
+},{"./util":10}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
