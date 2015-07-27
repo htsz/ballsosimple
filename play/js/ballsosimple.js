@@ -266,6 +266,7 @@ var Game = {
     spawnBall.call(this, this._balls);
     this.time.events.loop(Phaser.Timer.SECOND * 2, spawnBall.bind(this, this._balls));
 
+    this._health = _config.HEALTH;
     this._healthbox = this.add.sprite(3, 3, 'border');
     this._healthbar = this.add.sprite(4, 4, 'healthbar');
     this._healthbar.width = _config.HEALTH;
@@ -309,7 +310,7 @@ var Game = {
     var _this2 = this;
 
     this._balls.forEachAlive(function (ball) {
-      return ball.y >= 290 && pop.call(_this2, ball);
+      return checkBall.call(_this2, ball);
     });
     this.physics.arcade.collide(this._basket, this._balls, save, null, this);
   },
@@ -343,15 +344,24 @@ function save(basket, ball) {
   ball.animations.play('save', null, false, true);
 }
 
-function pop(ball) {
+function checkBall(ball) {
+  if (ball.y < 290) {
+    return;
+  }
+
+  if (ball.animations.currentAnim.name === 'pop') {
+    return;
+  }
+
+  this._health -= 16;
   ball.animations.play('pop', null, false, true);
-  var newHealth = this._healthbar.width - 16;
-  var tween = this.add.tween(this._healthbar).to({ width: newHealth }, 300, Phaser.Easing.Quadratic.InOut, true, 0);
-  tween.onComplete.add(end, this);
+
+  var tween = this.add.tween(this._healthbar).to({ width: this._health }, 300, Phaser.Easing.Quadratic.InOut, true, 0);
+  tween.onComplete.add(endTween, this);
 }
 
-function end() {
-  if (this._healthbar.width <= 0) {
+function endTween() {
+  if (this._health <= 0) {
     if (this._soundGameplay) {
       this._soundGameplay.destroy();
     }
