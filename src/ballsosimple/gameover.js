@@ -16,7 +16,7 @@ export const GameOver = {
     }
 
     const showScore = () =>
-      this.game.state.start('score', true, false, this._score);
+      this.state.start('score', true, false, this._score);
     this.input.onUp.add(showScore);
     this.input.keyboard.onUpCallback = showScore;
   }

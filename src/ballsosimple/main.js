@@ -8,6 +8,7 @@ import { GameOver } from './gameover';
 import { Score } from './score';
 
 const game = new Phaser.Game(480, 320, Phaser.AUTO, 'game');
+game.antialias = false;
 game.state.add('boot', Boot);
 game.state.add('preloader', Preloader);
 game.state.add('menu', Menu);

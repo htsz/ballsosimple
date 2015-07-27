@@ -38,7 +38,7 @@ export const Preloader = {
   },
 
   create: function() {
-    this.game.state.start('menu');
+    this.state.start('menu');
   }
 
 };
