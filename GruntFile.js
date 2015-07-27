@@ -6,6 +6,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-bump');
 
   grunt.initConfig({
 
@@ -57,9 +58,35 @@ module.exports = function (grunt) {
         jshintrc: 'src/.jshintrc',
       },
     },
+
+    bump: {
+      options: {
+        files: ['package.json'],
+        updateConfigs: [],
+        commit: true,
+        commitMessage: 'Release v%VERSION%',
+        commitFiles: ['package.json', 'play'],
+        createTag: true,
+        tagName: 'v%VERSION%',
+        tagMessage: 'Version %VERSION%',
+        push: true,
+        pushTo: 'upstream',
+        gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+        globalReplace: false,
+        prereleaseName: false,
+        regExp: false
+      }
+    },
+
   });
 
+  grunt.registerTask('build',
+    ['jshint', 'concat', 'browserify']);
+
   grunt.registerTask('default',
-    ['jshint', 'concat', 'browserify', 'connect', 'open', 'watch']);
+    ['build', 'connect', 'open', 'watch']);
+
+  grunt.registerTask('release',
+    ['build', 'bump']);
 
 };
