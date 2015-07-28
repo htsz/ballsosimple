@@ -18,7 +18,7 @@ export const Score = {
       prettyTime(this._score) + ' minutes.', 32);
 
     this.add.button(260, 230, 'menu-buttons',
-      () => this.game.state.start('game'), null, 3, 3, 3, 3);
+      () => this.state.start('game'), null, 3, 3, 3, 3);
     this.add.button(120, 230, 'menu-buttons',
       () => tweet(this._score), null, 4, 4, 4, 4);
   }
