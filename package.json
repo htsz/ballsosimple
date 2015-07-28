@@ -1,6 +1,6 @@
 {
   "name": "ballsosimple",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Ball So Simple",
   "main": "play/index.html",
   "scripts": {

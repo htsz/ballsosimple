@@ -193,11 +193,9 @@ var Boot = {
   },
 
   create: function create() {
-    this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    this.game.scale.pageAlignHorizontally = true;
-    this.game.scale.pageAlignVertically = true;
-    this.game.scale.setScreenSize(true);
-    this.game.state.start('preloader');
+    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    this.scale.setScreenSize(true);
+    this.state.start('preloader');
   }
 
 };
@@ -213,6 +211,10 @@ var HEALTH = 160;
 exports.HEALTH = HEALTH;
 var TIME_TO_FIRST_POPUP = 10;
 exports.TIME_TO_FIRST_POPUP = TIME_TO_FIRST_POPUP;
+var BEAT_PER_SECOND = 23 / 15; // 92 bpm
+exports.BEAT_PER_SECOND = BEAT_PER_SECOND;
+var BALL_SPAWN_INTERVAL = 2 * BEAT_PER_SECOND * Phaser.Timer.SECOND;
+exports.BALL_SPAWN_INTERVAL = BALL_SPAWN_INTERVAL;
 
 },{}],4:[function(require,module,exports){
 'use strict';
@@ -239,7 +241,9 @@ var Game = {
     var _this = this;
 
     this.physics.startSystem(Phaser.Physics.ARCADE);
-    this.physics.arcade.gravity.y = 20;
+
+    this._soundGameplay = this.add.audio('audio-gameplay', 1, true);
+    this._soundGameplay.play('', 0, 1, true);
 
     this._spikes = this.add.group();
     this._spikes.createMultiple(32, 'spikes', 0, true);
@@ -257,14 +261,12 @@ var Game = {
     this._balls = this.add.group();
     this._balls.createMultiple(30, 'ball', 0, false);
 
-    this._balls.callAll('animations.add', 'animations', 'drop', [0, 1], 2, true);
+    this._balls.callAll('animations.add', 'animations', 'drop', [0, 1], _config.BEAT_PER_SECOND, true);
     this._balls.callAll('animations.add', 'animations', 'pop', [2, 3, 4], 30, true);
     this._balls.callAll('animations.add', 'animations', 'save', [5, 6, 7], 30, true);
 
-    this._balls.callAll('play', null, 'drop');
-
     spawnBall.call(this, this._balls);
-    this.time.events.loop(Phaser.Timer.SECOND * 2, spawnBall.bind(this, this._balls));
+    this.time.events.loop(_config.BALL_SPAWN_INTERVAL, spawnBall.bind(this, this._balls));
 
     this._health = _config.HEALTH;
     this._healthbox = this.add.sprite(3, 3, 'border');
@@ -283,8 +285,6 @@ var Game = {
     this._basket.body.allowGravity = false;
     this._basket.body.immovable = true;
     this._basket.body.setSize(72, 13, 0, 0);
-    this._soundGameplay = this.add.audio('audio-gameplay', 1, true);
-    this._soundGameplay.play('', 0, 1, true);
 
     var howto = _util.drawText.call(this, 'Collect balls.  It\'s that simple.', 32);
     this.time.events.add(Phaser.Timer.SECOND * 4, function () {
@@ -334,10 +334,12 @@ function spawnBall(group) {
     return;
   }
 
-  this.physics.enable(ball, Phaser.Physics.ARCADE);
   ball.anchor.set(0.5);
   ball.reset(positions[this.rnd.integerInRange(0, 4)], 0 - 24);
   ball.animations.play('drop', null, true);
+
+  this.physics.enable(ball, Phaser.Physics.ARCADE);
+  ball.body.velocity.y = 30;
 }
 
 function save(basket, ball) {
@@ -400,7 +402,7 @@ var GameOver = {
     }
 
     var showScore = function showScore() {
-      return _this.game.state.start('score', true, false, _this._score);
+      return _this.state.start('score', true, false, _this._score);
     };
     this.input.onUp.add(showScore);
     this.input.keyboard.onUpCallback = showScore;
@@ -425,6 +427,7 @@ var _gameover = require('./gameover');
 var _score = require('./score');
 
 var game = new Phaser.Game(480, 320, Phaser.AUTO, 'game');
+game.antialias = false;
 game.state.add('boot', _boot.Boot);
 game.state.add('preloader', _preloader.Preloader);
 game.state.add('menu', _menu.Menu);
@@ -453,7 +456,7 @@ var Menu = {
       if (this._soundIntro) {
         this._soundIntro.destroy();
       }
-      this.game.state.start('game');
+      this.state.start('game');
     }, this, 0, 0, 0, 0);
   }
 
@@ -552,7 +555,7 @@ var Preloader = {
   },
 
   create: function create() {
-    this.game.state.start('menu');
+    this.state.start('menu');
   }
 
 };
@@ -583,7 +586,7 @@ var Score = {
     _util.drawText.call(this, 'Can it be all so simple?\nYou survived ' + (0, _util.prettyTime)(this._score) + ' minutes.', 32);
 
     this.add.button(260, 230, 'menu-buttons', function () {
-      return _this.game.state.start('game');
+      return _this.state.start('game');
     }, null, 3, 3, 3, 3);
     this.add.button(120, 230, 'menu-buttons', function () {
       return tweet(_this._score);
