@@ -1,6 +1,6 @@
 'use strict';
 
-import { HEALTH } from './config';
+import { HEALTH, BEAT_PER_SECOND, BALL_SPAWN_INTERVAL } from './config';
 import { initPopups } from './popups';
 import { prettyTime, drawText } from './util';
 
@@ -14,7 +14,9 @@ export const Game = {
 
   create: function() {
     this.physics.startSystem(Phaser.Physics.ARCADE);
-    this.physics.arcade.gravity.y = 20;
+
+    this._soundGameplay = this.add.audio('audio-gameplay', 1, true);
+    this._soundGameplay.play('', 0, 1, true);
 
     this._spikes = this.add.group();
     this._spikes.createMultiple(32, 'spikes', 0, true);
@@ -36,18 +38,15 @@ export const Game = {
     this._balls.createMultiple(30, 'ball', 0, false);
 
     this._balls.callAll(
-      'animations.add', 'animations', 'drop', [0, 1], 2, true);
+      'animations.add', 'animations', 'drop', [0, 1], BEAT_PER_SECOND, true);
     this._balls.callAll(
       'animations.add', 'animations', 'pop', [2, 3, 4], 30, true);
     this._balls.callAll(
       'animations.add', 'animations', 'save', [5, 6, 7], 30, true);
 
-    this._balls.callAll('play', null, 'drop');
-
-
     spawnBall.call(this, this._balls);
     this.time.events.loop(
-      Phaser.Timer.SECOND * 2, spawnBall.bind(this, this._balls));
+      BALL_SPAWN_INTERVAL, spawnBall.bind(this, this._balls));
 
     this._health = HEALTH;
     this._healthbox = this.add.sprite(3, 3, 'border');
@@ -69,9 +68,6 @@ export const Game = {
     this._basket.body.allowGravity = false;
     this._basket.body.immovable = true;
     this._basket.body.setSize(72, 13, 0, 0);
-    this._soundGameplay = this.add.audio('audio-gameplay',1,true);
-    this._soundGameplay.play('',0,1,true);
-
 
     const howto = drawText.call(this,
       'Collect balls.  It\'s that simple.', 32);
@@ -120,10 +116,12 @@ function spawnBall(group) {
     return;
   }
 
-  this.physics.enable(ball, Phaser.Physics.ARCADE);
   ball.anchor.set(0.5);
   ball.reset(positions[this.rnd.integerInRange(0, 4)], 0 - 24);
   ball.animations.play('drop', null, true);
+
+  this.physics.enable(ball, Phaser.Physics.ARCADE);
+  ball.body.velocity.y = 30;
 }
 
 function save(basket, ball) {
